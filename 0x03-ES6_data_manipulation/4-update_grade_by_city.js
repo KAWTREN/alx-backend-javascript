@@ -7,4 +7,3 @@ export default function updateStudentGradeByCity(listStudents, targetLocation, n
       return { ...obj, grade };
     });
 }
-

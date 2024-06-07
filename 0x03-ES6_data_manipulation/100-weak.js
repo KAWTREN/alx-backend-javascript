@@ -5,4 +5,3 @@ const queryAPI = (endpoint) => {
   weakMap.set(endpoint, counter);
 };
 export { weakMap, queryAPI };
-

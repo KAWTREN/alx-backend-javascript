@@ -7,4 +7,3 @@ export default function cleanSet(xSet, xStartString) {
     .map((ele) => ele.replace(xStartString, ''))
     .join('-');
 }
-

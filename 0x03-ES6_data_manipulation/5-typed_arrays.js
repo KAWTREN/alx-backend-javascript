@@ -6,4 +6,3 @@ export default function createInt8TypedArray(length, position, value) {
   xint8Array.fill(value, position, position + 1);
   return new DataView(xint8Array.buffer);
 }
-
