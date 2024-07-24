@@ -1,26 +1,28 @@
 const assert = require('assert');
-const calculateNumber = require('./0-calcul')
+const calculateNumber = require('./0-calcul.js');
 
-describe('calculateNumber', function() {
-    it('should retun 4 when 1 and 3 are passed', function() {
-        assert.strictEqual(calculateNumber(1, 3), 4);
-    });
+describe('calculateNumber', () => {
+  it('not rounded', () => {
+    assert.strictEqual(calculateNumber(1, 1), 2);
+    assert.strictEqual(calculateNumber(1, 3), 4);
+  });
 
-    it('should return 5 when 1 and 3.7 are passed', function() {
-        assert.strictEqual(calculateNumber(1, 3.7), 5);
-    });
+  it('has decimal point >= 0.5 ', () => {
+    assert.strictEqual(calculateNumber(1.5, 1), 3);
+    assert.strictEqual(calculateNumber(1, 2.6), 4);
+    assert.strictEqual(calculateNumber(1.5, 2.6), 5);
+    assert.strictEqual(calculateNumber(1.4, 2.6), 4);
+  });
 
-    it('should return 0 when -0.4 and 0.4 are passed', function() {
-        assert.strictEqual(calculateNumber(0.4, -0.4), 0);
-    });
+  it('one arg has decimal point >= 0.5 ', () => {
+    assert.strictEqual(calculateNumber(1.4, 1), 2);
+    assert.strictEqual(calculateNumber(1, 2.1), 3);
+    assert.strictEqual(calculateNumber(1.4, 1.4), 2);
+  });
 
-    it('should return 6 when 1.5 and 3.7 are passed', function() {
-        assert.strictEqual(calculateNumber(1.5, 3.7), 6);
-    });
-
-    it('should return NAN', function(){
-        assert.strictEqual(calculateNumber(), NaN);
-        assert.strictEqual(calculateNumber(1, 'r'), NaN);
-        assert.strictEqual(calculateNumber('t','y'), NaN);
-    });
+  it('should return NaN', () => {
+    assert.strictEqual(calculateNumber(), NaN);
+    assert.strictEqual(calculateNumber(1, 'e'), NaN);
+    assert.strictEqual(calculateNumber('e', 'e'), NaN);
+  });
 });
