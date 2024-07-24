@@ -46,17 +46,17 @@ describe('calculateNumber', function() {
 
     describe('DIVIDE', function() {
         it('not rounded', () => {
-            expect(calculateNumber('DIVIDE', 1, 1), 1);
-            expect(calculateNumber('DIVIDE', 1, 3), 1 / 3);
-            expect(calculateNumber('DIVIDE', 1.5, 2), 1);
+            expect(calculateNumber('DIVIDE', 1, 1)).to.be.equal(1);
+            expect(calculateNumber('DIVIDE', 1, 3)).to.be.equal(1 / 3);
+            expect(calculateNumber('DIVIDE', 1.5, 2)).to.be.equal(1);
         });      
     });
 
     describe('Error', function() {
         it('Error', () => {
-            expect(calculateNumber('DIVIDE', 1, 0), 'Error');
-            expect(calculateNumber('not a type', 1, 3), 'Error');
-            expect(calculateNumber('DIVIDE', 1, 0.4), 'Error');
+            expect(calculateNumber('DIVIDE', 1, 0)).to.be.equal('Error');
+            expect(calculateNumber('not a type', 1, 3)).to.be.equal('Error');
+            expect(calculateNumber('DIVIDE', 1, 0.4)).to.be.equal('Error');
         });
     });
 });
