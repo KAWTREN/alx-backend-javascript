@@ -1,6 +1,7 @@
 const sinon = require('sinon');
 const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./3-payment');
+
 describe('sendPaymentRequestToApi', () => {
   it('should call calculateNumber', () => {
     const spy = sinon.spy(Utils, 'calculateNumber');
